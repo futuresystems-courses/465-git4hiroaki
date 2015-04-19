@@ -1,0 +1,27 @@
+hshioi
+
+# ######################################################################
+# Starting vm->hshioi_7 on cloud->india using image->futuresystems/ubuntu-14.04, flavor->m1.small, key->hshioi_ubuntu-key
+# ######################################################################
+{'cloud': 'india',
+ 'cm_user_id': 'hshioi',
+ 'flavor_id': u'2',
+ 'image_id': u'6a6a3474-8194-44ac-9f56-70cb93207f21',
+ 'key': u'hshioi_ubuntu-key',
+ 'name': u'hshioi_7',
+ u'server': {u'OS-DCF:diskConfig': u'MANUAL',
+             u'adminPass': '******',
+             u'id': u'7b3cb335-7d4c-4def-a810-0511dfcb199b',
+             u'links': [{u'href': u'http://i5r.idp.iu.futuregrid.org/v2/23491bab37e846ad9322a71c4af41b8f/servers/7b3cb335-7d4c-4def-a810-0511dfcb199b',
+                         u'rel': u'self'},
+                        {u'href': u'http://i5r.idp.iu.futuregrid.org/23491bab37e846ad9322a71c4af41b8f/servers/7b3cb335-7d4c-4def-a810-0511dfcb199b',
+                         u'rel': u'bookmark'}],
+             u'security_groups': [{u'name': u'default'}]}}
+
+hshioi
+
+# ######################################################################
+# Deleting vm->hshioi_7 on cloud->india
+# ######################################################################
+{'msg': 'success'}
+time consumed: 5.90 s
