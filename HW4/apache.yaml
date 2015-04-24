@@ -1,0 +1,21 @@
+# playbook_apache.yaml
+---
+- hosts: ansible-test
+  sudo: true
+  remote_user: ubuntu
+  tasks:
+    - name: get apache repo
+      get_url: url="http://apache.mivzakim.net/tomcat/tomcat-7/v7.0.57/bin/apache-tomcat-7.0.57.tar.gz" 
+dest=/etc/yum.repos.d/apache.repo
+
+    - name: set apache repo
+      command: rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
+
+    - name: install dependencies
+      yum: name=java-1.7.0-openjdk state=latest
+
+    - name: install apache
+      yum: name=apache state=latest
+
+    - name: start apache service
+      service: name=apache state=started
