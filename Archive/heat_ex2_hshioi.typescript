@@ -1,0 +1,678 @@
+Script started on Fri 24 Apr 2015 06:30:32 PM EDT
+torque/2.5.5 version 2.5.5 loaded
+moab version 5.4.0 loaded
+git version 2.2.1 loaded
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;3Hinstance_type: m1.small[19;5Htype: string[20;5Hdescription: Instance type for WordPress server[21;5Hdefault: m1.small[22;5Hconstraints:[23;7H- allowed_values: [m1.small, m1.medium, m1.large][24;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[25;3Himage_id:[26;5Htype: string[27;5Hdescription: >[28;7HName or ID of the image to use for the WordPress server.[29;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[30;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[31;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[32;7HFuturesystems has fedora-21.[33;5Hdefault: futuresystems/fedora-21[35;3Hdb_name:[36;5Htype: string[37;5Hdescription: WordPress database name[38;5Hdefault: wordpress[39;5Hconstraints:[40;7H- length: { min: 1, max: 64 }[41;32H(B[0;7m[ Read 150 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[41d[K[28d[29d[30d[31d[A[A[A[A[A[A[A[A[A[A[A[A[A[19d[20d[19;17H[A	[17;73H7[18;40r8[18dM[1;43r[1;72H(B[0;7mModified[18d(B[m[17;73H7[18;40r8[18dM[1;43r[18;1H    default : hshioi-india-key[19d[20;26H[21;17H[22;30H[23;22H[24;17H[25;30H[26d[27;12H[28d	[29d >[30;30H[31d[32d[33d[34d[35d[36d[37;11H[38d	[39;30H[40;23H7[3;41r8[41d[19S[1;43r[22;5Hconstraints:[23;7H- length: { min: 1, max: 64 }[24;9Hdescription: db_name must be between 1 and 64 characters[25;7H- allowed_pattern: '[a-zA-Z][a-zA-Z0-9]*'[26;9Hdescription: >[27;11Hdb_name must begin with a letter and contain only alphanumeric[28;11Hcharacters[29;3Hdb_username:[30;5Htype: string[31;5Hdescription: The WordPress database admin account username[32;5Hdefault: admin[33;5Hhidden: true[34;5Hconstraints:[35;7H- length: { min: 1, max: 16 }[36;9Hdescription: db_username must be between 1 and 16 characters[37;7H- allowed_pattern: '[a-zA-Z][a-zA-Z0-9]*'[38;9Hdescription: >[39;11Hdb_username must begin with a letter and contain only alphanumeric[40;11Hcharacters[22;17H[23;30H[24d[25d[26;23H[27;30H[28;21H[29;15H[30d	[31;30H[32;19H[33;17H[34d[35;30H[36d[37d[38;23H[39;30H[40;21H7[3;41r8[41d[19S[1;43r[22;3Hdb_password:[23;5Htype: string[24;5Hdescription: The WordPress database admin account password[25;5Hdefault: admin[26;5Hhidden: true[27;5Hconstraints:[28;7H- length: { min: 1, max: 41 }[29;9Hdescription: db_password must be between 1 and 41 characters[30;7H- allowed_pattern: '[a-zA-Z0-9]*'[31;9Hdescription: db_password must contain only alphanumeric characters[32;3Hdb_root_password:[33;5Htype: string[34;5Hdescription: Root password for MySQL[35;5Hdefault: admin[36;5Hhidden: true[37;5Hconstraints:[38;7H- length: { min: 1, max: 41 }[39;9Hdescription: db_root_password must be between 1 and 41 characters[40;7H- allowed_pattern: '[a-zA-Z0-9]*'[22;15H[23d	[24;30H[25;19H[26;17H[27d[28;30H[29d[30d[31d[32;20H[33;17H[34;30H[35;19H[36;17H[37d[38;30H[39d[40d7[3;41r8[41d[19S[1;43r[22;9Hdescription: db_root_password must contain only alphanumeric characters[24dresources:[25;3Hsecurity_group:[26;5Htype: AWS::EC2::SecurityGroup[27;5Hproperties:[28;7HGroupDescription: "SSH (22), HTTP (80)"[29;7HSecurityGroupIngress:[30;7H- IpProtocol: "tcp"[31;9HFromPort: "22"[32;9HToPort : "22"[33;9HCidrIp : "0.0.0.0/0"[34;7H- IpProtocol: "tcp"[35;9HFromPort: "80"[36;9HToPort: "80"[37;9HCidrIp: "0.0.0.0/0"[38;3Hfloatingip:[39;5Htype: OS::Nova::FloatingIP[40;5Hproperties:[22;30H[23d[24;11H[25;18H[26;30H[27;16H[28;30H[29d[30d[31;23H[32d[33;29H[34;26H[35;23H[36d[37;28H[38;14H[39;30H[40;16H7[3;41r8[41d[19S[1;43r[22;7Hpool: ext-net[23;3Hwordpress_instance:[24;5Htype: OS::Nova::Server[25;5Hproperties:[26;7Himage: { get_param: image_id }[27;7Hflavor: { get_param: instance_type }[28;7Hkey_name: { get_param: key_name }[29;7Hsecurity_groups:[30;9H- "default"[31;9H- { get_resource: security_group }[32;7Huser_data:[33;9Hstr_replace:[34;11Htemplate: |[35;13H#!/bin/bash -v[37;13Hyum -y install mariadb mariadb-server httpd wordpress[38;13Htouch /var/log/mariadb/mariadb.log[39;13Hchown mysql.mysql /var/log/mariadb/mariadb.log[40;13Hsystemctl start mariadb.service[22;20H[23de:[24;27H[25;16H[26;30H[27d[28d[29;24H[30;20H[31;30H[32;17H[33;21H[34d|[35;27H[36d[37;30H[38d[39d[40d7[3;41r8[41d[19S[1;43r[23;13H# Setup MySQL root password and create a user[24;13Hmysqladmin -u root password db_rootpassword[25;13Hcat << EOF | mysql -u root --password=db_rootpassword[26;13HCREATE DATABASE db_name;[27;13HGRANT ALL PRIVILEGES ON db_name.* TO "db_user"@"localhost"[28;13HIDENTIFIED BY "db_password";[29;13HFLUSH PRIVILEGES;[30;13HEXIT[31;13HEOF[33;13Hsed -i "/Deny from All/d" /etc/httpd/conf.d/wordpress.conf[34;13Hsed -i "s/Require local/Require all granted/" /etc/httpd/conf.d/word$[35;13Hsed -i s/database_name_here/db_name/ /etc/wordpress/wp-config.php[36;13Hsed -i s/username_here/db_user/ /etc/wordpress/wp-config.php[37;13Hsed -i s/password_here/db_password/ /etc/wordpress/wp-config.php[39;13Hsystemctl stop httpd.service[40;13Hsystemctl start httpd.service[22d[23;30H[24d[25d[26d[27d[28d[29d[30;17H[31d[32d[33;30H[34d[35d[36d[37d[38d[39;30H[40d7[3;41r8[41d[19S[1;43r[22;11Hparams:[23;13Hdb_rootpassword: { get_param: db_root_password }[24;13Hdb_name: { get_param: db_name }[25;13Hdb_user: { get_param: db_username }[26;13Hdb_password: { get_param: db_password }[27;3Hassociation:[28;5Htype: OS::Nova::FloatingIPAssociation[29;5Hproperties:[30;7Hfloating_ip: { get_resource: floatingip }[31;7Hserver_id: { get_resource: 'wordpress_instance' }[33doutputs:[34;3HWebsiteURL:[35;5Hdescription: URL for Wordpress wiki[36;5Hvalue:[37;7Hstr_replace:[38;9Htemplate: http://host/wordpress[39;9Hparams:[40;11Hhost: { get_attr: [ floatingip, ip ] }[22;18H[23;30H[24d[25d[26d[27;15H[28;30H[29;16H[30;30H[31d[32d[33;9H[34;14H[35;30H[36;11H[37;19H[38;30H[39;16H[40;30H7[3;41r8[41d[19S[1;43r[22;1H[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+Error parsing template file:///N/u/hshioi/hshioi_heat_ex2.yaml mapping values are not allowed in this context
+  in "<unicode string>", line 19, column 9
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-india-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora-21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[41d[K[26d[27d[28d[29d[30d[31d[32d[33d[34d[35d[36d[37d[A[35;37H[36d[35;37H[1;72H(B[0;7mModified[35;36H(B[m   [Z [Z     ubuntu-15.  4.04[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+Error parsing template file:///N/u/hshioi/hshioi_heat_ex2.yaml mapping values are not allowed in this context
+  in "<unicode string>", line 19, column 9
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-india-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/ubuntu-14.04[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[41d[K[28d[29d[30d[31d[32d[33d[34d[35d[36d[35;40H[42d[J[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ heat list
+WARNING (shell) DEPRECATED! Use stack-list instead.
++--------------------------------------+---------------------------+-----------------+----------------------+
+| id                                   | stack_name                | stack_status    | creation_time        |
++--------------------------------------+---------------------------+-----------------+----------------------+
+| 4a245d15-d5ef-4a3a-a5c5-c6e963ad84aa | heat-tutorial-oliveral    | CREATE_COMPLETE | 2015-04-16T21:20:48Z |
+| 267567fd-9871-47b1-bb33-5d618d51d8cb | heat-assignment1-oliveral | CREATE_FAILED   | 2015-04-17T00:01:51Z |
+| 2a1c9521-5782-4cfc-8f62-583673d9154a | heat_assignment-oliveral3 | CREATE_FAILED   | 2015-04-21T16:38:30Z |
+| 4cbc3f6e-eba8-44f5-84ea-7ef2ca991341 | heat_assignment-oliveral4 | CREATE_FAILED   | 2015-04-21T16:40:39Z |
+| 6503faae-5cfb-4727-83f6-a166afc292d4 | test                      | CREATE_COMPLETE | 2015-04-21T16:47:09Z |
+| afacec71-145b-4f95-bd22-068fca66bdc4 | test2                     | CREATE_COMPLETE | 2015-04-21T16:50:49Z |
+| 1c281773-de53-4e9b-828b-4488db772753 | heat-wordpress-mckibbenc  | DELETE_FAILED   | 2015-04-21T23:45:21Z |
+| a6e7c11f-1d41-430a-aca7-6679ecef9b72 | wordpress                 | CREATE_COMPLETE | 2015-04-22T01:13:56Z |
++--------------------------------------+---------------------------+-----------------+----------------------+
+]0;hshioi@i136:~[hshioi@i136 ~]$ nona [K[K[Kva list
++--------------------------------------+----------------------------------------------------------------+--------+------------+-------------+--------------------------------------+
+| ID                                   | Name                                                           | Status | Task State | Power State | Networks                             |
++--------------------------------------+----------------------------------------------------------------+--------+------------+-------------+--------------------------------------+
+| 3688906e-7749-48ea-ae03-ebe7c5049167 | SEMIRZA-001                                                    | ACTIVE | -          | Running     | int-net=10.23.1.193, 149.165.158.247 |
+| 46abc29a-6606-43dd-9fe7-6fdab3375a3f | ansible test-46abc29a-6606-43dd-9fe7-6fdab3375a3f              | ACTIVE | -          | Running     | int-net=10.23.0.97                   |
+| 4b2152bd-2438-400d-8d96-133265e3a38e | ansible test-4b2152bd-2438-400d-8d96-133265e3a38e              | ACTIVE | -          | Running     | int-net=10.23.0.95                   |
+| 9f45e14c-d71f-44f8-8cbe-52060c49d153 | ansible test-9f45e14c-d71f-44f8-8cbe-52060c49d153              | ACTIVE | -          | Running     | int-net=10.23.0.96                   |
+| 05143c8c-30a5-4648-92c2-ec7a5e80e2d1 | ansible_test_han-05143c8c-30a5-4648-92c2-ec7a5e80e2d1          | ACTIVE | -          | Running     | int-net=10.23.0.70                   |
+| 08d41d43-c0bc-4329-bb43-f1a4aae73839 | ansible_test_han-08d41d43-c0bc-4329-bb43-f1a4aae73839          | ACTIVE | -          | Running     | int-net=10.23.0.71                   |
+| 50749f0f-82f3-4866-bda9-66d5dd37fe2e | ansible_test_han-50749f0f-82f3-4866-bda9-66d5dd37fe2e          | ACTIVE | -          | Running     | int-net=10.23.0.72                   |
+| 5833cd2c-d974-4179-a08e-16b2e4516740 | apurba4iu-instance1                                            | ACTIVE | -          | Running     | int-net=10.23.2.122, 149.165.158.207 |
+| 249a40dc-927e-45de-be08-5dec68e79715 | benshad-tutorial1                                              | ACTIVE | -          | Running     | int-net=10.23.1.112                  |
+| e00090f8-c191-4492-94e9-d2ea2219c67c | benshad-tutorial1-ex1                                          | ACTIVE | -          | Running     | int-net=10.23.1.113, 149.165.158.223 |
+| 7abd8c29-e41e-4e8e-b5da-abce651f85cb | desouzar-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.0.24, 149.165.158.200  |
+| f1e94407-d2e6-43aa-b320-94dcad5bb063 | desouzar-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.1.1                    |
+| 52f5fd5a-6af7-4d03-a914-7d845e17cb9f | desouzar-tutorial3                                             | ACTIVE | -          | Running     | int-net=10.23.1.108, 149.165.158.208 |
+| e60b8535-7836-42b7-a788-83d7e80c41aa | drewmullen-001                                                 | ACTIVE | -          | Running     | int-net=10.23.0.237, 149.165.158.191 |
+| e3c5f1de-67ba-446e-bd80-2ad545e9f2fe | drewmullen-002                                                 | ACTIVE | -          | Running     | int-net=10.23.0.243, 149.165.158.192 |
+| 3aa9b139-1b20-43d8-887c-0d77fa156c26 | drewmullen-003                                                 | ACTIVE | -          | Running     | int-net=10.23.1.88, 149.165.158.157  |
+| 52717231-59ce-415e-a89e-8c3b2fb61daa | drewmullen003                                                  | ACTIVE | -          | Running     | int-net=10.23.1.71, 149.165.158.136  |
+| 005c6f11-9d1d-4aeb-beb1-483708a1cb01 | dustin                                                         | ACTIVE | -          | Running     | int-net=10.23.2.201                  |
+| 187f18e9-2ba5-4983-9c14-5ba2adcea3ff | hailsalex-001                                                  | ACTIVE | -          | Running     | int-net=10.23.0.210, 149.165.158.161 |
+| 7b41a25f-f4cf-4f18-9c09-73012f66f8e9 | hailsalex-tutorial1-ex1                                        | ACTIVE | -          | Running     | int-net=10.23.0.175                  |
+| bd047f1d-5fb0-4eed-a067-85ee4ef69877 | hailsalex001                                                   | ACTIVE | -          | Running     | int-net=10.23.0.234                  |
+| fc78f6e9-f8fd-420b-93ed-c5e0c72cec72 | han2012w-001                                                   | ACTIVE | -          | Running     | int-net=10.23.0.176, 149.165.158.116 |
+| b2c1eb89-8a92-492c-be57-0110f4be6453 | han2012w-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.0.159, 149.165.158.112 |
+| e503257e-689f-4efe-b644-fd82e3ad99dc | heat-tutorial-oliveral-my_instance-6fzrdzblqzgs                | ACTIVE | -          | Running     | int-net=10.23.0.52                   |
+| 7dbfb031-0088-421e-9785-f70e648a30dc | hshioi-001                                                     | ACTIVE | -          | Running     | int-net=10.23.1.132, 149.165.158.150 |
+| 67798ce5-e387-415a-a074-e2d567a1c0ef | hshioi-002                                                     | ACTIVE | -          | Running     | int-net=10.23.1.56, 149.165.158.135  |
+| 55b7ed10-d94a-488d-a0da-5195963832f7 | hshioi-test-55b7ed10-d94a-488d-a0da-5195963832f7               | ACTIVE | -          | Running     | int-net=10.23.1.195                  |
+| 65dac7bc-5a06-461f-b0c2-28939e6f3265 | hshioi-test-65dac7bc-5a06-461f-b0c2-28939e6f3265               | ACTIVE | -          | Running     | int-net=10.23.1.196                  |
+| 66ca51cb-2747-4615-91b8-5ca507fb694f | hshioi-test-66ca51cb-2747-4615-91b8-5ca507fb694f               | ACTIVE | -          | Running     | int-net=10.23.1.194                  |
+| c63b1697-4ef0-4d65-9242-debed03e677c | jambaker                                                       | ACTIVE | -          | Running     | int-net=10.23.3.193, 149.165.158.254 |
+| 7f480c10-93d2-45e6-ae93-66a301d6bf1f | jambakercentos                                                 | ACTIVE | -          | Running     | int-net=10.23.3.206                  |
+| 4ee9a6ec-5dda-4d2c-bc59-aff252d931cc | jesaldan-tutorial1-ex1                                         | ACTIVE | -          | Running     | int-net=10.23.0.154, 149.165.158.145 |
+| a7d2d549-fafc-4e63-a637-ae02eac72c90 | jesaldan_ansibleInstance1-a7d2d549-fafc-4e63-a637-ae02eac72c90 | ACTIVE | -          | Running     | int-net=10.23.1.129                  |
+| f19eebd0-b36a-4afc-8dee-b90ac23c9b88 | jesaldan_ansibleInstance1-f19eebd0-b36a-4afc-8dee-b90ac23c9b88 | ACTIVE | -          | Running     | int-net=10.23.1.130                  |
+| 4abe0567-60ac-4f56-8a03-01a5d4e19605 | jesaldan_ansibleInstance2                                      | ACTIVE | -          | Running     | int-net=10.23.1.128                  |
+| 3aafed2c-a29a-44e3-8000-be887e7b241b | lguenther-tutorial1                                            | ACTIVE | -          | Running     | int-net=10.23.2.113, 149.165.158.204 |
+| 33bcb342-0515-4d7d-b341-54802076c25c | liangwen-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.1.207, 149.165.158.118 |
+| c451879a-352e-4426-adcd-f20db0d8a018 | mabellin-tutorial2                                             | ACTIVE | -          | Running     | int-net=10.23.2.46, 149.165.158.51   |
+| 13850b0b-9d72-494d-a8c0-32e684cf0067 | mckibbenc                                                      | ACTIVE | -          | Running     | int-net=10.23.2.198, 149.165.158.235 |
+| 3d51f8de-5a87-4e52-af80-93489ebc2a44 | naomi ansible test-3d51f8de-5a87-4e52-af80-93489ebc2a44        | ERROR  | -          | NOSTATE     |                                      |
+| a95ec230-d9e7-4cb5-86fe-86aa675d50b9 | naomi ansible test-a95ec230-d9e7-4cb5-86fe-86aa675d50b9        | ERROR  | -          | NOSTATE     |                                      |
+| c2f90afd-5085-496c-a25a-e46af79ab8c6 | naomi ansible test-c2f90afd-5085-496c-a25a-e46af79ab8c6        | ERROR  | -          | NOSTATE     |                                      |
+| b52d8643-1158-4952-aa9f-88a9346f7d91 | naomi test                                                     | ACTIVE | -          | Running     | int-net=10.23.2.104                  |
+| 8d7441bd-37ac-459f-bc90-a8aa380fceee | naomi-001                                                      | ACTIVE | -          | Running     | int-net=10.23.0.226, 149.165.158.176 |
+| d1ea0661-265b-4bb6-8639-50d35b170f82 | naomi-tutorial1                                                | ACTIVE | -          | Running     | int-net=10.23.0.113, 149.165.158.119 |
+| 4fdea7b5-c6f0-4651-a089-9eacc72581c6 | naomi-tutorial1-ex1                                            | ACTIVE | -          | Running     | int-net=10.23.0.114, 149.165.158.253 |
+| 09bd3f6f-5ae9-4b3d-bde0-5d44bbbb791d | oliveral-cloudmesh                                             | ACTIVE | -          | Running     | int-net=10.23.1.9, 149.165.158.137   |
+| 8846b631-3a93-4424-a3cb-2cccda6cf8c4 | oliveral-nimbus-zookeeper                                      | ACTIVE | -          | Running     | int-net=10.23.2.146, 149.165.158.218 |
+| be0fddf7-cd34-4ea5-9f39-78f47ba353e7 | oliveral-nimbus-zookeeper-old                                  | ACTIVE | -          | Running     | int-net=10.23.1.135, 149.165.158.152 |
+| 1339de23-a7a4-4d59-95b3-aa3a72f605d4 | oliveral-supervisor1                                           | ACTIVE | -          | Running     | int-net=10.23.0.231, 149.165.158.185 |
+| de229157-fa0d-49f0-a8fe-20f098367653 | oliveral-supervisor2                                           | ACTIVE | -          | Running     | int-net=10.23.0.232, 149.165.158.143 |
+| fada23b4-70b0-4398-bde8-1f321362890d | oliveral_10                                                    | ACTIVE | -          | Running     | int-net=10.23.1.22                   |
+| 046e5760-ddcd-4daf-add7-7eba886d8994 | oliveral_7                                                     | ACTIVE | -          | Running     | int-net=10.23.1.19                   |
+| 2c818696-1672-43df-a18e-ed9e93adc299 | oliveral_8                                                     | ACTIVE | -          | Running     | int-net=10.23.1.20                   |
+| 1ff5b52b-5215-424e-9a2d-64047682cc12 | oliveral_9                                                     | ACTIVE | -          | Running     | int-net=10.23.1.21, 149.165.158.183  |
+| e2f428cb-4132-4bc1-b55f-4def30ed4374 | openstack-tutorial1-ex1                                        | ACTIVE | -          | Running     | int-net=10.23.0.255, 149.165.158.195 |
+| b6ad0012-9d57-49a3-99b4-f2a8e23d6e4b | rabindra-Cloudmesh                                             | ACTIVE | -          | Running     | int-net=10.23.1.150, 149.165.158.106 |
+| f79ea512-c205-46e0-82a8-3322e93a97be | rabindra-Cloudmesh2                                            | ACTIVE | -          | Running     | int-net=10.23.1.152                  |
+| 00a7f55a-599a-4fcb-a492-1b8672118aa9 | rpanj-tutorial1                                                | ACTIVE | -          | Running     | int-net=10.23.0.224                  |
+| 2274db31-a5d7-47f7-a8df-4bf532e35ab8 | rpanj-tutorial1                                                | ACTIVE | -          | Running     | int-net=10.23.1.143, 149.165.158.236 |
+| 6e06e069-44ed-42dd-8887-2622eaf0fda4 | rpanj-tutorial1                                                | ACTIVE | -          | Running     | int-net=10.23.1.115, 149.165.158.230 |
+| deeec11d-f520-436a-a021-e468e0a15348 | rpanj-tutorial1                                                | ACTIVE | -          | Running     | int-net=10.23.1.111, 149.165.158.221 |
+| ecbcfb78-a267-4926-b8ec-4657161486cb | semirza-001                                                    | ACTIVE | -          | Running     | int-net=10.23.1.198, 149.165.158.101 |
+| 1d1cbd67-fdbb-4e38-8516-6fdf98ecf4c8 | semirza-tutorial1-ex1                                          | ACTIVE | -          | Running     | int-net=10.23.3.67, 149.165.158.250  |
+| af740fab-41f7-4797-91a1-3ae3c58c6d2b | semirza_1                                                      | ACTIVE | -          | Running     | int-net=10.23.1.202                  |
+| 77470a8c-ed49-417f-8ccb-2685ade8fde5 | semirza_2                                                      | ACTIVE | -          | Running     | int-net=10.23.1.204                  |
+| 90b28da9-5987-4742-85ee-2cbba841cd2c | semirza_3                                                      | ACTIVE | -          | Running     | int-net=10.23.1.205                  |
+| 56d65fac-4424-455c-a802-e25a92928e77 | sjagdale-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.2.138                  |
+| 0a98f061-be66-4b75-bce8-6014d7f90818 | sjagdale-tutorial1-ex1                                         | ACTIVE | -          | Running     | int-net=10.23.2.14, 149.165.158.222  |
+| 5aabd23d-44ee-457e-bdc4-46a409c04c0e | srichand-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.0.222                  |
+| 6807982f-4b2b-4275-aba2-39060ff767c8 | srichand-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.0.180                  |
+| d2c044ec-d5a8-4509-911e-66824c5b5263 | srichand-tutorial1                                             | ACTIVE | -          | Running     | int-net=10.23.0.168, 149.165.158.151 |
+| 71621de4-2a9a-410b-976b-a6009831fc8b | test-instance1-4rcwt3y2lksl                                    | ACTIVE | -          | Running     | int-net=10.23.1.7                    |
+| 14977212-da6e-4b47-acf3-6c0ca4263aba | test-instance2-uik5mkdy2ywa                                    | ACTIVE | -          | Running     | int-net=10.23.1.69                   |
+| 768ac57b-27d4-4482-8128-300d22f83ccc | test2-instance1-jksdccj3jxfy                                   | ACTIVE | -          | Running     | int-net=10.23.1.70                   |
+| 3d60b29b-187d-46d3-bdb4-d45ec41f88a1 | tillmank-001                                                   | ACTIVE | -          | Running     | int-net=10.23.0.59, 149.165.158.203  |
+| 8d902489-52e8-451f-ba14-ea8428ab4145 | tillmank-001                                                   | ACTIVE | -          | Running     | int-net=10.23.0.60                   |
+| ac238244-2127-48a6-b518-3a574baee012 | tillmank-HW3                                                   | ACTIVE | -          | Running     | int-net=10.23.1.155, 149.165.158.113 |
+| 29fb6ba0-f909-4d0c-bdd1-cc3e26bcfbcb | tutorial1                                                      | ACTIVE | -          | Running     | int-net=10.23.2.174                  |
+| 3bd531d7-ae69-4a9e-abeb-36c0fd626709 | tutorial1                                                      | ACTIVE | -          | Running     | int-net=10.23.2.130                  |
+| 80169623-75b5-49eb-9081-f6d436de1de7 | tutorial1                                                      | ACTIVE | -          | Running     | int-net=10.23.3.192                  |
+| 9ef7636d-42fb-4212-8e29-3a085fec8507 | tutorial1                                                      | ACTIVE | -          | Running     | int-net=10.23.3.65                   |
+| b097d3ee-df31-4b6f-a7b9-a5749d912d21 | tutorial1                                                      | ACTIVE | -          | Running     | int-net=10.23.1.2, 149.165.158.132   |
+| c3de9861-64d0-422e-a371-9f23e45c6279 | tutorial1                                                      | ACTIVE | -          | Running     | int-net=10.23.1.45                   |
+| fc638b39-1b1e-4208-b948-230fc6a805cc | tutorial1-ex1                                                  | ACTIVE | -          | Running     | int-net=10.23.1.3, 149.165.158.190   |
+| 4f290829-75cc-4597-a98f-7587cba643a7 | ubuntu-han2012                                                 | ACTIVE | -          | Running     | int-net=10.23.0.160, 149.165.158.110 |
+| 0f39b381-8484-4ba8-bbb9-e30d77ea1470 | ubuntu14.04-lguenther                                          | ACTIVE | -          | Running     | int-net=10.23.2.121                  |
+| 21c9f51c-172b-4e61-854f-700da4d0d88f | ubuntu14.04-naomi                                              | ACTIVE | -          | Running     | int-net=10.23.0.116                  |
+| 28693ab7-953d-415e-a1dd-a854b88aaed2 | ubuntu14.04-rpanj                                              | ACTIVE | -          | Running     | int-net=10.23.1.151                  |
+| 26aa8420-0a2d-4a92-ba0f-e5e72bec33f1 | vfleet2210-001                                                 | ACTIVE | -          | Running     | int-net=10.23.0.173, 149.165.158.114 |
+| e308eb5a-35bb-4ca8-bcfe-588d905b547f | wordpress-wordpress_instance-ebphhpis3orj                      | ACTIVE | -          | Running     | int-net=10.23.1.84, 149.165.158.144  |
+| f177979e-52ab-46d2-94e4-92b1a3110017 | yhirose-tutorial1                                              | ACTIVE | -          | Running     | int-net=10.23.1.42, 149.165.158.128  |
+| d57cd5bb-0181-462e-8f1a-9b17146ead23 | {0}".format(vmname)                                            | ACTIVE | -          | Running     | int-net=10.23.1.203                  |
++--------------------------------------+----------------------------------------------------------------+--------+------------+-------------+--------------------------------------+
+]0;hshioi@i136:~[hshioi@i136 ~]$ nova list image
+usage: nova [--version] [--debug] [--os-cache] [--timings]
+            [--os-auth-token OS_AUTH_TOKEN]
+            [--os-tenant-name <auth-tenant-name>]
+            [--os-tenant-id <auth-tenant-id>] [--os-region-name <region-name>]
+            [--os-auth-system <auth-system>] [--service-type <service-type>]
+            [--service-name <service-name>]
+            [--volume-service-name <volume-service-name>]
+            [--os-endpoint-type <endpoint-type>]
+            [--os-compute-api-version <compute-api-ver>]
+            [--bypass-url <bypass-url>] [--insecure]
+            [--os-cacert <ca-certificate>] [--os-cert <certificate>]
+            [--os-key <key>] [--timeout <seconds>] [--os-auth-url OS_AUTH_URL]
+            [--os-domain-id OS_DOMAIN_ID] [--os-domain-name OS_DOMAIN_NAME]
+            [--os-project-id OS_PROJECT_ID]
+            [--os-project-name OS_PROJECT_NAME]
+            [--os-project-domain-id OS_PROJECT_DOMAIN_ID]
+            [--os-project-domain-name OS_PROJECT_DOMAIN_NAME]
+            [--os-trust-id OS_TRUST_ID] [--os-user-id OS_USER_ID]
+            [--os-user-name OS_USERNAME]
+            [--os-user-domain-id OS_USER_DOMAIN_ID]
+            [--os-user-domain-name OS_USER_DOMAIN_NAME]
+            [--os-password OS_PASSWORD]
+            <subcommand> ...
+error: unrecognized arguments: image
+Try 'nova help ' for more information.
+]0;hshioi@i136:~[hshioi@i136 ~]$ nova list help
+usage: nova [--version] [--debug] [--os-cache] [--timings]
+            [--os-auth-token OS_AUTH_TOKEN]
+            [--os-tenant-name <auth-tenant-name>]
+            [--os-tenant-id <auth-tenant-id>] [--os-region-name <region-name>]
+            [--os-auth-system <auth-system>] [--service-type <service-type>]
+            [--service-name <service-name>]
+            [--volume-service-name <volume-service-name>]
+            [--os-endpoint-type <endpoint-type>]
+            [--os-compute-api-version <compute-api-ver>]
+            [--bypass-url <bypass-url>] [--insecure]
+            [--os-cacert <ca-certificate>] [--os-cert <certificate>]
+            [--os-key <key>] [--timeout <seconds>] [--os-auth-url OS_AUTH_URL]
+            [--os-domain-id OS_DOMAIN_ID] [--os-domain-name OS_DOMAIN_NAME]
+            [--os-project-id OS_PROJECT_ID]
+            [--os-project-name OS_PROJECT_NAME]
+            [--os-project-domain-id OS_PROJECT_DOMAIN_ID]
+            [--os-project-domain-name OS_PROJECT_DOMAIN_NAME]
+            [--os-trust-id OS_TRUST_ID] [--os-user-id OS_USER_ID]
+            [--os-user-name OS_USERNAME]
+            [--os-user-domain-id OS_USER_DOMAIN_ID]
+            [--os-user-domain-name OS_USER_DOMAIN_NAME]
+            [--os-password OS_PASSWORD]
+            <subcommand> ...
+error: unrecognized arguments: help
+Try 'nova help ' for more information.
+]0;hshioi@i136:~[hshioi@i136 ~]$ nova list i[Kvm
+usage: nova [--version] [--debug] [--os-cache] [--timings]
+            [--os-auth-token OS_AUTH_TOKEN]
+            [--os-tenant-name <auth-tenant-name>]
+            [--os-tenant-id <auth-tenant-id>] [--os-region-name <region-name>]
+            [--os-auth-system <auth-system>] [--service-type <service-type>]
+            [--service-name <service-name>]
+            [--volume-service-name <volume-service-name>]
+            [--os-endpoint-type <endpoint-type>]
+            [--os-compute-api-version <compute-api-ver>]
+            [--bypass-url <bypass-url>] [--insecure]
+            [--os-cacert <ca-certificate>] [--os-cert <certificate>]
+            [--os-key <key>] [--timeout <seconds>] [--os-auth-url OS_AUTH_URL]
+            [--os-domain-id OS_DOMAIN_ID] [--os-domain-name OS_DOMAIN_NAME]
+            [--os-project-id OS_PROJECT_ID]
+            [--os-project-name OS_PROJECT_NAME]
+            [--os-project-domain-id OS_PROJECT_DOMAIN_ID]
+            [--os-project-domain-name OS_PROJECT_DOMAIN_NAME]
+            [--os-trust-id OS_TRUST_ID] [--os-user-id OS_USER_ID]
+            [--os-user-name OS_USERNAME]
+            [--os-user-domain-id OS_USER_DOMAIN_ID]
+            [--os-user-domain-name OS_USER_DOMAIN_NAME]
+            [--os-password OS_PASSWORD]
+            <subcommand> ...
+error: unrecognized arguments: vm
+Try 'nova help ' for more information.
+]0;hshioi@i136:~[hshioi@i136 ~]$ nova help
+usage: nova [--version] [--debug] [--os-cache] [--timings]
+            [--os-auth-token OS_AUTH_TOKEN]
+            [--os-tenant-name <auth-tenant-name>]
+            [--os-tenant-id <auth-tenant-id>] [--os-region-name <region-name>]
+            [--os-auth-system <auth-system>] [--service-type <service-type>]
+            [--service-name <service-name>]
+            [--volume-service-name <volume-service-name>]
+            [--os-endpoint-type <endpoint-type>]
+            [--os-compute-api-version <compute-api-ver>]
+            [--bypass-url <bypass-url>] [--insecure]
+            [--os-cacert <ca-certificate>] [--os-cert <certificate>]
+            [--os-key <key>] [--timeout <seconds>] [--os-auth-url OS_AUTH_URL]
+            [--os-domain-id OS_DOMAIN_ID] [--os-domain-name OS_DOMAIN_NAME]
+            [--os-project-id OS_PROJECT_ID]
+            [--os-project-name OS_PROJECT_NAME]
+            [--os-project-domain-id OS_PROJECT_DOMAIN_ID]
+            [--os-project-domain-name OS_PROJECT_DOMAIN_NAME]
+            [--os-trust-id OS_TRUST_ID] [--os-user-id OS_USER_ID]
+            [--os-user-name OS_USERNAME]
+            [--os-user-domain-id OS_USER_DOMAIN_ID]
+            [--os-user-domain-name OS_USER_DOMAIN_NAME]
+            [--os-password OS_PASSWORD]
+            <subcommand> ...
+
+Command-line interface to the OpenStack Nova API.
+
+Positional arguments:
+  <subcommand>
+    absolute-limits             Print a list of absolute limits for a user
+    add-fixed-ip                Add new IP address on a network to server.
+    add-floating-ip             DEPRECATED, use floating-ip-associate instead.
+    add-secgroup                Add a Security Group to a server.
+    agent-create                Create new agent build.
+    agent-delete                Delete existing agent build.
+    agent-list                  List all builds.
+    agent-modify                Modify existing agent build.
+    aggregate-add-host          Add the host to the specified aggregate.
+    aggregate-create            Create a new aggregate with the specified
+                                details.
+    aggregate-delete            Delete the aggregate.
+    aggregate-details           Show details of the specified aggregate.
+    aggregate-list              Print a list of all aggregates.
+    aggregate-remove-host       Remove the specified host from the specified
+                                aggregate.
+    aggregate-set-metadata      Update the metadata associated with the
+                                aggregate.
+    aggregate-update            Update the aggregate's name and optionally
+                                availability zone.
+    availability-zone-list      List all the availability zones.
+    backup                      Backup a server by creating a 'backup' type
+                                snapshot.
+    boot                        Boot a new server.
+    clear-password              Clear the admin password for a server.
+    cloudpipe-configure         Update the VPN IP/port of a cloudpipe
+                                instance.
+    cloudpipe-create            Create a cloudpipe instance for the given
+                                project.
+    cloudpipe-list              Print a list of all cloudpipe instances.
+    console-log                 Get console log output of a server.
+    credentials                 Show user credentials returned from auth.
+    delete                      Immediately shut down and delete specified
+                                server(s).
+    diagnostics                 Retrieve server diagnostics.
+    dns-create                  Create a DNS entry for domain, name and IP.
+    dns-create-private-domain   Create the specified DNS domain.
+    dns-create-public-domain    Create the specified DNS domain.
+    dns-delete                  Delete the specified DNS entry.
+    dns-delete-domain           Delete the specified DNS domain.
+    dns-domains                 Print a list of available dns domains.
+    dns-list                    List current DNS entries for domain and IP or
+                                domain and name.
+    endpoints                   Discover endpoints that get returned from the
+                                authenticate services.
+    evacuate                    Evacuate server from failed host.
+    fixed-ip-get                Retrieve info on a fixed IP.
+    fixed-ip-reserve            Reserve a fixed IP.
+    fixed-ip-unreserve          Unreserve a fixed IP.
+    flavor-access-add           Add flavor access for the given tenant.
+    flavor-access-list          Print access information about the given
+                                flavor.
+    flavor-access-remove        Remove flavor access for the given tenant.
+    flavor-create               Create a new flavor
+    flavor-delete               Delete a specific flavor
+    flavor-key                  Set or unset extra_spec for a flavor.
+    flavor-list                 Print a list of available 'flavors' (sizes of
+                                servers).
+    flavor-show                 Show details about the given flavor.
+    floating-ip-associate       Associate a floating IP address to a server.
+    floating-ip-bulk-create     Bulk create floating IPs by range.
+    floating-ip-bulk-delete     Bulk delete floating IPs by range.
+    floating-ip-bulk-list       List all floating IPs.
+    floating-ip-create          Allocate a floating IP for the current tenant.
+    floating-ip-delete          De-allocate a floating IP.
+    floating-ip-disassociate    Disassociate a floating IP address from a
+                                server.
+    floating-ip-list            List floating IPs.
+    floating-ip-pool-list       List all floating IP pools.
+    get-password                Get the admin password for a server.
+    get-rdp-console             Get a rdp console to a server.
+    get-serial-console          Get a serial console to a server.
+    get-spice-console           Get a spice console to a server.
+    get-vnc-console             Get a vnc console to a server.
+    host-action                 Perform a power action on a host.
+    host-describe               Describe a specific host.
+    host-list                   List all hosts by service.
+    host-update                 Update host settings.
+    hypervisor-list             List hypervisors.
+    hypervisor-servers          List servers belonging to specific
+                                hypervisors.
+    hypervisor-show             Display the details of the specified
+                                hypervisor.
+    hypervisor-stats            Get hypervisor statistics over all compute
+                                nodes.
+    hypervisor-uptime           Display the uptime of the specified
+                                hypervisor.
+    image-create                Create a new image by taking a snapshot of a
+                                running server.
+    image-delete                Delete specified image(s).
+    image-list                  Print a list of available images to boot from.
+    image-meta                  Set or Delete metadata on an image.
+    image-show                  Show details about the given image.
+    interface-attach            Attach a network interface to a server.
+    interface-detach            Detach a network interface from a server.
+    interface-list              List interfaces attached to a server.
+    keypair-add                 Create a new key pair for use with servers.
+    keypair-delete              Delete keypair given by its name.
+    keypair-list                Print a list of keypairs for a user
+    keypair-show                Show details about the given keypair.
+    list                        List active servers.
+    list-secgroup               List Security Group(s) of a server.
+    live-migration              Migrate running server to a new machine.
+    lock                        Lock a server. A normal (non-admin) user will
+                                not be able to execute actions on a locked
+                                server.
+    meta                        Set or Delete metadata on a server.
+    migrate                     Migrate a server. The new host will be
+                                selected by the scheduler.
+    network-associate-host      Associate host with network.
+    network-associate-project   Associate project with network.
+    network-create              Create a network.
+    network-delete              Delete network by label or id.
+    network-disassociate        Disassociate host and/or project from the
+                                given network.
+    network-list                Print a list of available networks.
+    network-show                Show details about the given network.
+    pause                       Pause a server.
+    quota-class-show            List the quotas for a quota class.
+    quota-class-update          Update the quotas for a quota class.
+    quota-defaults              List the default quotas for a tenant.
+    quota-delete                Delete quota for a tenant/user so their quota
+                                will Revert back to default.
+    quota-show                  List the quotas for a tenant/user.
+    quota-update                Update the quotas for a tenant/user.
+    rate-limits                 Print a list of rate limits for a user
+    reboot                      Reboot a server.
+    rebuild                     Shutdown, re-image, and re-boot a server.
+    refresh-network             Refresh server network information.
+    remove-fixed-ip             Remove an IP address from a server.
+    remove-floating-ip          DEPRECATED, use floating-ip-disassociate
+                                instead.
+    remove-secgroup             Remove a Security Group from a server.
+    rename                      Rename a server.
+    rescue                      Reboots a server into rescue mode, which
+                                starts the machine from either the initial
+                                image or a specified image, attaching the
+                                current boot disk as secondary.
+    reset-network               Reset network of a server.
+    reset-state                 Reset the state of a server.
+    resize                      Resize a server.
+    resize-confirm              Confirm a previous resize.
+    resize-revert               Revert a previous resize (and return to the
+                                previous VM).
+    resume                      Resume a server.
+    root-password               Change the admin password for a server.
+    scrub                       Delete networks and security groups associated
+                                with a project.
+    secgroup-add-default-rule   Add a rule to the set of rules that will be
+                                added to the 'default' security group for new
+                                tenants.
+    secgroup-add-group-rule     Add a source group rule to a security group.
+    secgroup-add-rule           Add a rule to a security group.
+    secgroup-create             Create a security group.
+    secgroup-delete             Delete a security group.
+    secgroup-delete-default-rule
+                                Delete a rule from the set of rules that will
+                                be added to the 'default' security group for
+                                new tenants.
+    secgroup-delete-group-rule  Delete a source group rule from a security
+                                group.
+    secgroup-delete-rule        Delete a rule from a security group.
+    secgroup-list               List security groups for the current tenant.
+    secgroup-list-default-rules
+                                List rules that will be added to the 'default'
+                                security group for new tenants.
+    secgroup-list-rules         List rules for a security group.
+    secgroup-update             Update a security group.
+    server-group-create         Create a new server group with the specified
+                                details.
+    server-group-delete         Delete specific server group(s).
+    server-group-get            Get a specific server group.
+    server-group-list           Print a list of all server groups.
+    service-delete              Delete the service.
+    service-disable             Disable the service.
+    service-enable              Enable the service.
+    service-list                Show a list of all running services. Filter by
+                                host & binary.
+    shelve                      Shelve a server.
+    shelve-offload              Remove a shelved server from the compute node.
+    show                        Show details about the given server.
+    ssh                         SSH into a server.
+    start                       Start the server(s).
+    stop                        Stop the server(s).
+    suspend                     Suspend a server.
+    unlock                      Unlock a server.
+    unpause                     Unpause a server.
+    unrescue                    Restart the server from normal boot disk
+                                again.
+    unshelve                    Unshelve a server.
+    usage                       Show usage data for a single tenant.
+    usage-list                  List usage data for all tenants.
+    version-list                List all API versions.
+    volume-attach               Attach a volume to a server.
+    volume-create               Add a new volume.
+    volume-delete               Remove volume(s).
+    volume-detach               Detach a volume from a server.
+    volume-list                 List all the volumes.
+    volume-show                 Show details about a volume.
+    volume-snapshot-create      Add a new snapshot.
+    volume-snapshot-delete      Remove a snapshot.
+    volume-snapshot-list        List all the snapshots.
+    volume-snapshot-show        Show details about a snapshot.
+    volume-type-create          Create a new volume type.
+    volume-type-delete          Delete a specific volume type.
+    volume-type-list            Print a list of available 'volume types'.
+    volume-update               Update volume attachment.
+    x509-create-cert            Create x509 cert for a user in tenant.
+    x509-get-root-cert          Fetch the x509 root cert.
+    bash-completion             Prints all of the commands and options to
+                                stdout so that the nova.bash_completion script
+                                doesn't have to hard code them.
+    help                        Display help about this program or one of its
+                                subcommands.
+    force-delete                Force delete a server.
+    restore                     Restore a soft-deleted server.
+    migration-list              Print a list of migrations.
+    instance-action             Show an action.
+    instance-action-list        List actions on a server.
+    host-meta                   Set or Delete metadata on all instances of a
+                                host.
+    baremetal-interface-add     Add a network interface to a baremetal node.
+    baremetal-interface-list    List network interfaces associated with a
+                                baremetal node.
+    baremetal-interface-remove  Remove a network interface from a baremetal
+                                node.
+    baremetal-node-create       Create a baremetal node.
+    baremetal-node-delete       Remove a baremetal node and any associated
+                                interfaces.
+    baremetal-node-list         Print list of available baremetal nodes.
+    baremetal-node-show         Show information about a baremetal node.
+    host-evacuate               Evacuate all instances from failed host.
+    net                         DEPRECATED, Use tenant-network-show instead.
+    net-create                  DEPRECATED, use tenant-network-create instead.
+    net-delete                  DEPRECATED, use tenant-network-delete instead.
+    net-list                    DEPRECATED, use tenant-network-list instead.
+    tenant-network-create       Create a tenant network.
+    tenant-network-delete       Delete a tenant network.
+    tenant-network-list         List tenant networks.
+    tenant-network-show         Show a tenant network.
+    list-extensions             List all the os-api extensions that are
+                                available.
+    host-servers-migrate        Migrate all instances of the specified host to
+                                other available hosts.
+    cell-capacities             Get cell capacities for all cells or a given
+                                cell.
+    cell-show                   Show details of a given cell.
+    host-evacuate-live          Live migrate all instances of the specified
+                                host to other available hosts.
+
+Optional arguments:
+  --version                     show program's version number and exit
+  --debug                       Print debugging output
+  --os-cache                    Use the auth token cache. Defaults to False if
+                                env[OS_CACHE] is not set.
+  --timings                     Print call timing info
+  --os-auth-token OS_AUTH_TOKEN
+                                Defaults to env[OS_AUTH_TOKEN]
+  --os-tenant-name <auth-tenant-name>
+                                Defaults to env[OS_TENANT_NAME].
+  --os-tenant-id <auth-tenant-id>
+                                Defaults to env[OS_TENANT_ID].
+  --os-region-name <region-name>
+                                Defaults to env[OS_REGION_NAME].
+  --os-auth-system <auth-system>
+                                Defaults to env[OS_AUTH_SYSTEM].
+  --service-type <service-type>
+                                Defaults to compute for most actions
+  --service-name <service-name>
+                                Defaults to env[NOVA_SERVICE_NAME]
+  --volume-service-name <volume-service-name>
+                                Defaults to env[NOVA_VOLUME_SERVICE_NAME]
+  --os-endpoint-type <endpoint-type>
+                                Defaults to env[NOVA_ENDPOINT_TYPE],
+                                env[OS_ENDPOINT_TYPE] or publicURL.
+  --os-compute-api-version <compute-api-ver>
+                                Accepts 1.1 or 3, defaults to
+                                env[OS_COMPUTE_API_VERSION].
+  --bypass-url <bypass-url>     Use this API endpoint instead of the Service
+                                Catalog. Defaults to
+                                env[NOVACLIENT_BYPASS_URL]
+  --insecure                    Explicitly allow client to perform "insecure"
+                                TLS (https) requests. The server's certificate
+                                will not be verified against any certificate
+                                authorities. This option should be used with
+                                caution.
+  --os-cacert <ca-certificate>  Specify a CA bundle file to use in verifying a
+                                TLS (https) server certificate. Defaults to
+                                env[OS_CACERT].
+  --os-cert <certificate>       Defaults to env[OS_CERT].
+  --os-key <key>                Defaults to env[OS_KEY].
+  --timeout <seconds>           Set request timeout (in seconds).
+  --os-auth-url OS_AUTH_URL     Authentication URL
+  --os-domain-id OS_DOMAIN_ID   Domain ID to scope to
+  --os-domain-name OS_DOMAIN_NAME
+                                Domain name to scope to
+  --os-project-id OS_PROJECT_ID
+                                Project ID to scope to
+  --os-project-name OS_PROJECT_NAME
+                                Project name to scope to
+  --os-project-domain-id OS_PROJECT_DOMAIN_ID
+                                Domain ID containing project
+  --os-project-domain-name OS_PROJECT_DOMAIN_NAME
+                                Domain name containing project
+  --os-trust-id OS_TRUST_ID     Trust ID
+  --os-user-id OS_USER_ID       User ID
+  --os-user-name OS_USERNAME, --os-username OS_USERNAME
+                                Username
+  --os-user-domain-id OS_USER_DOMAIN_ID
+                                User's domain id
+  --os-user-domain-name OS_USER_DOMAIN_NAME
+                                User's domain name
+  --os-password OS_PASSWORD     User's password
+
+See "nova help COMMAND" for help on a specific command.
+]0;hshioi@i136:~[hshioi@i136 ~]$ nova help[Knova helplist vmhelpimage[Kheat[C[C[C[C[Cnano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-india-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/ubuntu-14.04[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[41d[K[28d[29d[30d[31d[32d[33d[34d[35d[36d[37d[38d[39d[A[A[A[35;40H[34;35H[35d[36d[35;40H[1;72H(B[0;7mModified[35;39H(B[m      [Z [Z     fedora-20.i386[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H[41;34H[1K (B[0;7m[ Cancelled ](B[m[K[42d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[35;42H[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16Pova helplist vmhelpimage[Kheat[C[C[C[C[Cnano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+Error parsing template file:///N/u/hshioi/hshioi_heat_ex2.yaml mapping values are not allowed in this context
+  in "<unicode string>", line 19, column 9
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-india-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora-20.i386[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[41d[K[28d[29d[30d[31d[32d[33d[34d[35d[36d[37d[A[A[34;35H[35d20.i3	6[1;72H(B[0;7mModified[35;41H(B[m [Z       21[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H[41;34H[1K (B[0;7m[ Cancelled ](B[m[K[42d(B[0;7m^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[35;36H[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+Error parsing template file:///N/u/hshioi/hshioi_heat_ex2.yaml mapping values are not allowed in this context
+  in "<unicode string>", line 19, column 9
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-india-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[18;30H[41d[K[18;27H[1;72H(B[0;7mModified[18;25H(B[m-key[K[Z-key[K[Z-key[K[23G-key[K[22G-key[K-key[K[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+Error parsing template file:///N/u/hshioi/hshioi_heat_ex2.yaml mapping values are not allowed in this context
+  in "<unicode string>", line 19, column 9
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[42d[J[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ ls /.ss[K[K[K[K~/ss[K[K.ssh/
+[00m[00;32mauthorized_keys[00m  [00mid_rsa[00m      [00mknown_hosts[00m        [00mopenstack-key[00m
+[00mhshioi-key[00m       [00mid_rsa.pub[00m  [00mopenstack-ex1-key[00m
+[m]0;hshioi@i136:~[hshioi@i136 ~]$ ls ~/.ssh/nano hshioi_heat_ex2.yaml
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[A[16;17H[1;72H(B[0;7mModified[16;17H(B[ma[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pls ~/.ssh/
+[00m[00;32mauthorized_keys[00m  [00mid_rsa[00m      [00mknown_hosts[00m        [00mopenstack-key[00m
+[00mhshioi-key[00m       [00mid_rsa.pub[00m  [00mopenstack-ex1-key[00m
+[m]0;hshioi@i136:~[hshioi@i136 ~]$ ls ~/.ssh/nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pls ~/.ssh/nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+Error parsing template file:///N/u/hshioi/hshioi_heat_ex2.yaml mapping values are not allowed in this context
+  in "<unicode string>", line 19, column 9
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[Cls ~/.ssh/[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnano hshioi_heat_ex2.yaml
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: stringa[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type: m1.small[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[A[16;18H[1;72H(B[0;7mModified[16;17H(B[m [Z[15;12H[A[13;12H[A[11;17H[A[A[41d[K[9;17H[A[A[A[A[A[3;17H[4d[5;15H[6d	[7d[8d[9d[10d[11d[12d[13;12H[14d[15;12H[16d	[17d[18d[19d[20;17H[21d[22d[A	[20;26H[Z [Z       [41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+ERROR: Property error : wordpress_instance: image Error validating value u'futuresystems/fedora21': The Image (futuresystems/fedora21) could not be found.
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type:[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[41d[K[28d[29d[30d[31d[32d[33d[34d[35d[36d[37d[38d[39d[A[A[A[35;36H[1;72H(B[0;7mModified[35;35H(B[m  [Z [Z     ubuntu15 4.04[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+ERROR: Property error : wordpress_instance: image Error validating value u'futuresystems/ubuntu14.04': The Image (futuresystems/ubuntu14.04) could not be found.
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type:[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/ubuntu14.04[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[28d[41d[K[28d[29d[30d[31d[32d[33d[34d[35d[36d[35;39H[Zu[1;72H(B[0;7mModified[35;34H(B[m-14.04[35G[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
++--------------------------------------+---------------------------+--------------------+----------------------+
+| id                                   | stack_name                | stack_status       | creation_time        |
++--------------------------------------+---------------------------+--------------------+----------------------+
+| 4a245d15-d5ef-4a3a-a5c5-c6e963ad84aa | heat-tutorial-oliveral    | CREATE_COMPLETE    | 2015-04-16T21:20:48Z |
+| 267567fd-9871-47b1-bb33-5d618d51d8cb | heat-assignment1-oliveral | CREATE_FAILED      | 2015-04-17T00:01:51Z |
+| 2a1c9521-5782-4cfc-8f62-583673d9154a | heat_assignment-oliveral3 | CREATE_FAILED      | 2015-04-21T16:38:30Z |
+| 4cbc3f6e-eba8-44f5-84ea-7ef2ca991341 | heat_assignment-oliveral4 | CREATE_FAILED      | 2015-04-21T16:40:39Z |
+| 6503faae-5cfb-4727-83f6-a166afc292d4 | test                      | CREATE_COMPLETE    | 2015-04-21T16:47:09Z |
+| afacec71-145b-4f95-bd22-068fca66bdc4 | test2                     | CREATE_COMPLETE    | 2015-04-21T16:50:49Z |
+| 1c281773-de53-4e9b-828b-4488db772753 | heat-wordpress-mckibbenc  | DELETE_FAILED      | 2015-04-21T23:45:21Z |
+| a6e7c11f-1d41-430a-aca7-6679ecef9b72 | wordpress                 | CREATE_COMPLETE    | 2015-04-22T01:13:56Z |
+| 0a8fbedd-bbec-4ee9-abc0-d8d9c705dacc | hshioi_heat_ex2           | CREATE_IN_PROGRESS | 2015-04-24T22:44:48Z |
++--------------------------------------+---------------------------+--------------------+----------------------+
+]0;hshioi@i136:~[hshioi@i136 ~]$ curl -L http://[IP ADDRESS]/wordpress[C[C[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpress[1P/wordpressh/wordpresst/wordpresst/wordpressp/wordpress:/wordpress[C/wordpress[C/wordpress1/wordpress4/wordpress9/wordpress./wordpress1/wordpress6/wordpress5/wordpress./wordpress1/wordpress5/wordpress8/wordpress./wordpress5/wordpress2/wordpress[C/wordpress[1P149.165.158.52//wordpress[1P149.165.158.52//wordpress[1P149.165.158.52//wordpress[1P149.165.158.52//wordpress[1P149.165.158.52//wordpress[1P149.165.158.52//wordpress[1P149.165.158.52//wordpress
+curl: (7) couldn't connect to host
+]0;hshioi@i136:~[hshioi@i136 ~]$ curl -L http://149.165.158.52//wordpress
+curl: (7) couldn't connect to host
+]0;hshioi@i136:~[hshioi@i136 ~]$ curl -L http://149.165.158.52//wordpress[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type:[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/ubuntu-14.04[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[4d[5d[6d[7d[8d[9d[10d[11d[12d[13d[14d[15d[16d[17d[18d[19d[20d[21d[22d[23d[24d[25d[26d[27d[41d[K[27d[28d[29d[30d[31d[32d[33d[34d[35d[36d[37d[A[35;40H[1;72H(B[0;7mModified[35;39H(B[m      [Z [Z     fedora-21[41d(B[0;7mSave modified buffer (ANSWERING "No" WILL DESTROY CHANGES) ?                     [42;1H Y(B[m Yes[K[43d(B[0;7m N(B[m No  [14G   (B[0;7m^C(B[m Cancel[K[41;62H(B[0;7mFile Name to Write: hshioi_heat_ex2.yaml                    [42d^G(B[m Get Help[42;21H(B[0;7m^T(B[m To Files[42;41H(B[0;7mM-M(B[m Mac Format[61G(B[0;7mM-P(B[m Prepend[43d(B[0;7m^C(B[m Cancel	    (B[0;7mM-D(B[m DOS Format	(B[0;7mM-A(B[m Append[43;61H(B[0;7mM-B(B[m Backup File[41;41H[42d[39;49m(B[m[J[1;72H(B[0;7m        [41;31H(B[m[1K (B[0;7m[ Wrote 152 lines ](B[m[K[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type:[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora-21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[42d[J[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ nano hshioi_heat_ex2.yaml[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl -L http://149.165.158.52//wordpress[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
+ERROR: The Stack (hshioi_heat_ex2) already exists.
+]0;hshioi@i136:~[hshioi@i136 ~]$ heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 
++--------------------------------------+---------------------------+--------------------+----------------------+
+| id                                   | stack_name                | stack_status       | creation_time        |
++--------------------------------------+---------------------------+--------------------+----------------------+
+| 4a245d15-d5ef-4a3a-a5c5-c6e963ad84aa | heat-tutorial-oliveral    | CREATE_COMPLETE    | 2015-04-16T21:20:48Z |
+| 267567fd-9871-47b1-bb33-5d618d51d8cb | heat-assignment1-oliveral | CREATE_FAILED      | 2015-04-17T00:01:51Z |
+| 2a1c9521-5782-4cfc-8f62-583673d9154a | heat_assignment-oliveral3 | CREATE_FAILED      | 2015-04-21T16:38:30Z |
+| 4cbc3f6e-eba8-44f5-84ea-7ef2ca991341 | heat_assignment-oliveral4 | CREATE_FAILED      | 2015-04-21T16:40:39Z |
+| 6503faae-5cfb-4727-83f6-a166afc292d4 | test                      | CREATE_COMPLETE    | 2015-04-21T16:47:09Z |
+| afacec71-145b-4f95-bd22-068fca66bdc4 | test2                     | CREATE_COMPLETE    | 2015-04-21T16:50:49Z |
+| 1c281773-de53-4e9b-828b-4488db772753 | heat-wordpress-mckibbenc  | DELETE_FAILED      | 2015-04-21T23:45:21Z |
+| a6e7c11f-1d41-430a-aca7-6679ecef9b72 | wordpress                 | CREATE_COMPLETE    | 2015-04-22T01:13:56Z |
+| 0a12eb7e-3e9a-40ad-bd7e-9170570649dd | hshioi_heat_ex2           | CREATE_IN_PROGRESS | 2015-04-24T22:48:26Z |
++--------------------------------------+---------------------------+--------------------+----------------------+
+]0;hshioi@i136:~[hshioi@i136 ~]$ ~heat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccurl -L http://149.165.158.52//wordpress
+curl: (7) couldn't connect to host
+]0;hshioi@i136:~[hshioi@i136 ~]$ Stacks > Topology
+bash: Stacks: command not found
+]0;hshioi@i136:~[hshioi@i136 ~]$ Stacks > Topologycurl -L http://149.165.158.52//wordpress[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23PStacks > Topology[KStacks > Topologycurl -L http://149.165.158.52//wordpress[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cheat stack-create --template-file hshioi_heat_ex2.yaml hshioi_heaat_ex2 [A[C[C[C[C[C[C[C[C[C[C[39Pnano hshioi_heat_ex2.yaml
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?1049h[1;43r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 1.3.12          File: hshioi_heat_ex2.yaml                            [3;1H(B[mheat_template_version: 2014-10-16[5ddescription: >[6;3HHeat WordPress template on Fedora 21, using only Heat OpenStack-native[7;3Hresource types (adapted from  HOT examples), and without the requirement for[8;3Hheat-cfntools in the image.  WordPress is web software you can use to create[9;3Ha beautiful website or blog.[10;3HThis template installs a single-instance WordPress deployment using a local[11;3HMySQL database to store the data.[13dparameters:[15;3Hkey_name:[16;5Htype: string[17;5Hdescription : Name of a KeyPair to enable SSH access to the instance[18;5Hdefault: hshioi-key[20;3Hinstance_type:[21;5Htype: string[22;5Hdescription: Instance type for WordPress server[23;5Hdefault: m1.small[24;5Hconstraints:[25;7H- allowed_values: [m1.small, m1.medium, m1.large][26;9Hdescription: instance_type must be one of m1.small, m1.medium or m1.large[27;3Himage_id:[28;5Htype: string[29;5Hdescription: >[30;7HName or ID of the image to use for the WordPress server.[31;7HRecommended values are fedora-20.i386 or fedora-20.x86_64;[32;7Hget them from http://cloud.fedoraproject.org/fedora-20.i386.qcow2[33;7Hor http://cloud.fedoraproject.org/fedora-20.x86_64.qcow2.[34;7HFuturesystems has fedora-21.[35;5Hdefault: futuresystems/fedora-21[37;3Hdb_name:[38;5Htype: string[39;5Hdescription: WordPress database name[40;5Hdefault: wordpress[41;32H(B[0;7m[ Read 152 lines ][42d^G(B[m Get Help  (B[0;7m^O(B[m WriteOut  (B[0;7m^R(B[m Read File (B[0;7m^Y(B[m Prev Page (B[0;7m^K(B[m Cut Text  (B[0;7m^C(B[m Cur Pos[43d(B[0;7m^X(B[m Exit[14G(B[0;7m^J(B[m Justify   (B[0;7m^W(B[m Where Is  (B[0;7m^V(B[m Next Page (B[0;7m^U(B[m UnCut Text(B[0;7m^T(B[m To Spell[3d[42d[J[43;81H[43;1H[?1049l[?1l>]0;hshioi@i136:~[hshioi@i136 ~]$ cp h[K-t ~/465-git4hiroaki/HW4/ hshioi_heat_ex2.yaml hshioi_heat_ex 1.yaml 
+]0;hshioi@i136:~[hshioi@i136 ~]$ cd 465-git4hiroaki/HW4/
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ add [K[K[K[Kgitt [K[K add hshioi_heat_ex*
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ c[Kgit com[K[K[Kstatus
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mnew file:   hshioi_heat_ex1.yaml[m
+	[32mnew file:   hshioi_heat_ex2.yaml[m
+
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ git commit -m ""E"x"1" "[1P"[1P"1" "[1P"[1P" "1" "&" "2" "[1@:[C[1@ [1@n[1@o[1@t[C[1@ [1@c[1@r[1@e[1@a[1@t[1@i[1@n[1@g[C[1@ [1@2[C[1@ [1@i[1@n[1@s[1@t[1@a[1@n[1@c[1@e[1@s[C[1@ [1@y[1@e[1@t[C[C[C[1@E[1@x[1@ [1P[1P[1P[1@.[1@ [C[C[C[C: "[C "s "t "i " [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl ""[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl "[C "n "o "c "[C "[1P"[1P "t "[1@s[1P[1@c[1@a[C[1@n[C[1@n[1P[C[C[C[C "c "o "n "n "e "c "t "[C "w "o "r "d "p "r "e "s "s "[1P "[1P "[1P "[1P "[1P "[1P "[1P "[1P "[1P "t "h "e "[C "i "n "d "e "x "p "[1P "[C "p "a "g "e "[C[1P"[C
+[master ab7d209] Ex 1: not creating 2 instances yet. Ex 2: still cannot connect the index page
+ 2 files changed, 176 insertions(+)
+ create mode 100644 HW4/hshioi_heat_ex1.yaml
+ create mode 100644 HW4/hshioi_heat_ex2.yaml
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ git push orgi[K[Kigina master
+fatal: 'origina' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ git push origina master[1P master
+Enter passphrase for key '/N/u/hshioi/.ssh/id_rsa': 
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects:  20% (1/5)   Compressing objects:  40% (2/5)   Compressing objects:  60% (3/5)   Compressing objects:  80% (4/5)   Compressing objects: 100% (5/5)   Compressing objects: 100% (5/5), done.
+Writing objects:  20% (1/5)   Writing objects:  40% (2/5)   Writing objects:  60% (3/5)   Writing objects:  80% (4/5)   Writing objects: 100% (5/5)   Writing objects: 100% (5/5), 2.28 KiB | 0 bytes/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+To git@github.com:futuresystems/465-git4hiroaki
+   962b6ba..ab7d209  master -> master
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ eval ``[Cs`s`h`-`a`g`e`n`t`
+Agent pid 16084
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ add-key
+bash: add-key: command not found
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ ssh-add
+Enter passphrase for /N/u/hshioi/.ssh/id_rsa: 
+Identity added: /N/u/hshioi/.ssh/id_rsa (/N/u/hshioi/.ssh/id_rsa)
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ ssh-addadd-keyeval `ssh-agent`git push origin master
+Everything up-to-date
+]0;hshioi@i136:~/465-git4hiroaki/HW4[hshioi@i136 HW4]$ exit
+exit
+
+Script done on Fri 24 Apr 2015 07:01:19 PM EDT

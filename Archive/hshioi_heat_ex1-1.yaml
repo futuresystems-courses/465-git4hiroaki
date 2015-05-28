@@ -1,0 +1,22 @@
+heat_template_version: 2014-10-16
+
+description: Simple template to deploy a single compute instance on FutureSystems for exercise 1
+
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      key_name: hshioi-india-key
+      image: futuresystems/ubuntu-14.04
+      flavor: m1.small
+
+parameters:
+  ports:
+    type: comma_delimited_list
+    label: ports
+    default: "22,80,443"
+  protocols:
+    type: comma_delimited_list
+    label: protocols
+    default: "tcp,udp"
+
